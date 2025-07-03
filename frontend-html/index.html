@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Eventos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema de Gerenciamento de Eventos</h1>
+    <nav>
+      <a href="#" onclick="mostrarSecao('eventos')">Eventos</a>
+      <a href="#" onclick="mostrarSecao('criar')">Criar Evento</a>
+      <a href="#" onclick="gerarRelatorio()">Relatório</a>
+      <a href="#" onclick="logout()">Sair</a>
+    </nav>
+  </header>
+  <main>
+    <section class="filtros">
+      <h2>Listagem de Eventos</h2>
+      <input type="date" id="filtroData" placeholder="Filtrar por Data">
+      <input type="text" id="filtroLocal" placeholder="Filtrar por Local">
+      <button onclick="filtrarEventos()">Filtrar</button>
+    </section>
+    <section class="eventos" id="secaoEventos">
+      <ul id="listaEventos">
+        <li><strong>NodeConf</strong> - 2025-08-10 - São Paulo</li>
+        <li><strong>JS Summit</strong> - 2025-09-15 - Rio de Janeiro</li>
+      </ul>
+    </section>
+    <section class="criar-evento" id="secaoCriar" style="display:none;">
+      <h2>Criar Novo Evento</h2>
+      <form onsubmit="criarEvento(event)">
+        <input type="text" id="nomeEvento" placeholder="Nome do Evento" required>
+        <input type="date" id="dataEvento" required>
+        <input type="text" id="localEvento" placeholder="Local" required>
+        <textarea id="descricaoEvento" placeholder="Descrição"></textarea>
+        <button type="submit">Criar Evento</button>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
